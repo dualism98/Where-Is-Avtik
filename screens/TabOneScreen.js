@@ -15,10 +15,14 @@ export default class TabOneScreen extends React.Component {
     try{
       const busesApiCall = await fetch('https://mu-kgt.ru/informing/wap/marsh/?action=getListCountTransport', {method: 'GET'})
       const buses = await busesApiCall.json()
-
       var list = []
       for (const property in buses[1]){
-        list.push(property)
+        const bus = {
+          num: property,
+          A: buses[1][property]['A']['ts_count'],
+          B: buses[1][property]['B']['ts_count'],
+        }
+        list.push(bus)
       }
 
       this.setState({ busList: list})
@@ -54,6 +58,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(251, 248, 208, 0.5)',
   },
 });

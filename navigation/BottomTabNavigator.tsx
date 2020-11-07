@@ -19,7 +19,7 @@ function BusStackScreen(){
   return(
     <BusStack.Navigator>
       <BusStack.Screen name="Home" component={TabOneScreen} options={{headerShown: false}}/>
-      <BusStack.Screen name="Buses" component={BusScreen} options={  ({ route }) => ({ title: 'Автобус ' + route.params.item }) }/>
+      <BusStack.Screen name="Buses" component={BusScreen} options={  ({ route }) => ({ title: 'Автобус ' + route.params.item.num }) }/>
     </BusStack.Navigator>
   )
 }
@@ -54,7 +54,9 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint,
+                        activeBackgroundColor: 'rgba(251, 248, 208, 0.8)',
+                        inactiveBackgroundColor: 'rgba(251, 248, 208, 0.8)' }}>
       <BottomTab.Screen
         name="Автобус"
         component={BusStackScreen}

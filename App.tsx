@@ -16,7 +16,7 @@ export default function App() {
     return (
       <SafeAreaProvider>
         <Navigation colorScheme={colorScheme} />
-        <StatusBar />
+        <StatusBar backgroundColor={'rgba(251, 248, 208, 0.5)'}/>
       </SafeAreaProvider>
     );
   }
