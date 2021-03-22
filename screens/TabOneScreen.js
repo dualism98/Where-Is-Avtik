@@ -37,7 +37,6 @@ export default class TabOneScreen extends React.Component {
     const { navigate } = this.props.navigation
     return (
       <View style={{ backgroundColor: 'white'}}>
-        <StatusBar barStyle={'dark-content'}/>
         <View style={styles.container}>
           
           {this.state.busList.map(item => {
@@ -58,6 +57,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
-    backgroundColor: 'rgba(251, 248, 208, 0.5)',
+    backgroundColor: '#008891',
   },
 });

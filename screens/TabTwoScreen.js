@@ -71,7 +71,6 @@ export default class TabTwoScreen extends React.Component {
     const { navigate } = this.props.navigation
     return (
       <View style={{ backgroundColor: 'white'}}>
-      <StatusBar barStyle={'dark-content'}/>
         <View style={styles.container}>
           
         {this.state.busList.map(item => {

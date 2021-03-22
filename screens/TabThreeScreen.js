@@ -16,7 +16,6 @@ export default class TabTwoScreen extends React.Component {
       const busesApiCall = await fetch('https://mu-kgt.ru/informing/wap/marsh/?action=getListCountTransport', {method: 'GET'})
       const buses = await busesApiCall.json()
 
-      console.log(buses)
       var list = []
       for (const property in buses[3]){
         list.push(property)
@@ -31,7 +30,6 @@ export default class TabTwoScreen extends React.Component {
 
   async getTimetable(){
     try{
-      console.log("Update")
       const timetableApiCall = await fetch('https://mu-kgt.ru/informing/wap/marsh/?m=' + this.state.bus + '&action=getMarshData')
       const timetable = await timetableApiCall.json();
       var list = []
@@ -70,8 +68,7 @@ export default class TabTwoScreen extends React.Component {
   render(){
     const { navigate } = this.props.navigation
     return (
-      <View style={{ backgroundColor: 'white'}}>
-      <StatusBar barStyle={'dark-content'}/>
+      <View style={{ backgroundColor: 'rgb(93, 123, 149)'}}>
         <View style={styles.container}>
           
         {this.state.busList.map(item => {
@@ -92,6 +89,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
-    backgroundColor: 'white',
+    backgroundColor: 'rgb(93, 123, 149)',
   },
 });
